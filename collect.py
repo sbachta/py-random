@@ -50,8 +50,9 @@ failFile.writelines(failList)
 failFile.close()
 
 endTime = time.time()
-elapsedTime = endTime - startTime
+minutes, seconds = divmod(endTime - startTime, 60)
+
 print(f'Success count: {len(successList)}')
 print(f'Fail count: {len(failList)}')
-print(f'Elapsed time: {elapsedTime/60:.2f} seconds')
+print(f'Elapsed time: {minutes:.0f}:{seconds:.0f}')
 
